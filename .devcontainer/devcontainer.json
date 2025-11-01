@@ -1,0 +1,21 @@
+{
+  "name": "Clipulator Dev",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "rust-analyzer.check.command": "clippy"
+      },
+      "extensions": [
+        "rust-lang.rust-analyzer",
+        "tamasfe.even-better-toml"
+      ]
+    }
+  },
+  "features": {},
+  "postCreateCommand": "cargo fetch",
+  "forwardPorts": [],
+  "remoteUser": "vscode"
+}

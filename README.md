@@ -105,6 +105,17 @@ Accelerators are active while the Clipulator window is focused. To use a shortcu
 - Lint: `cargo clippy`
 - Check: `cargo check`
 
+### Dev container (VS Code / Dev Containers extension)
+
+You can avoid installing the native GTK development headers on your host by using the provided development container definition. This setup builds on top of the official Rust devcontainer image and installs the libraries required by the `gtk`, `gdk`, and `glib` crates.
+
+1. Install the [Dev Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) extension for VS Code.
+2. Run **Dev Containers: Reopen in Container** from the command palette while this repository is open.
+3. Wait for the container to build; it will pre-fetch the crate dependencies automatically.
+4. Use the integrated terminal to run `cargo check`, `cargo clippy`, and `cargo run` inside the container.
+
+### Notes
+
 The code favours clear, blocking-free clipboard access by dispatching transformations to worker threads and posting the results back through the GTK main loop. This pattern keeps the UI responsive while still leveraging synchronous Rust APIs and external processes.
 
 ## Roadmap / ideas
